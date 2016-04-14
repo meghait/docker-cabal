@@ -20,6 +20,5 @@ class ghc::install () {
     creates => '/usr/local/bin/ghc',
     timeout => 0,
     require => [Package["libgmp3-dev"], Package["wget"], Package["xz-utils"], Package["make"], Package["build-essential"]],
-    logoutput  => true,
   }
 }
