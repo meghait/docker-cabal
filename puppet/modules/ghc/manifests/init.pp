@@ -11,7 +11,10 @@ class ghc::install () {
   package { "make":
     ensure => "installed",
   }
-  package {"build-essential":
+  package { "build-essential":
+    ensure => "installed",
+  }
+  package { "libssl-dev":
     ensure => "installed",
   }
 

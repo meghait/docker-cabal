@@ -8,4 +8,6 @@ RUN cd /tmp/puppet; puppet apply -d manifests/default.pp --modulepath=/tmp/puppe
 
 ENTRYPOINT ["/home/cabal/.cabal/bin/cabal"]
 
+WORKDIR /code
+
 CMD ["/home/cabal/.cabal/bin/cabal", "install", "-j"]

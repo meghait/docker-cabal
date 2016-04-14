@@ -25,4 +25,14 @@ class cabal::install () {
     command => '/tmp/puppet/modules/cabal/lib/update-cabal-packages.sh',
     require => Exec["install cabal"],
   }
+
+  exec { "cabal-owner":
+    command => "/bin/chown cabal:cabal /home/cabal/.cabal -R",
+    require => Exec["update-cabal-packages"],
+  }
+
+  exec { "ghc-owner":
+    command => "/bin/chown cabal:cabal /home/cabal/.ghc -R",
+    require => Exec["update-cabal-packages"],
+  }
 }
