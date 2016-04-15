@@ -9,4 +9,4 @@ RUN cd /tmp/puppet; puppet apply -d manifests/default.pp --modulepath=/tmp/puppe
 USER cabal
 ENTRYPOINT ["/home/cabal/.cabal/bin/cabal"]
 WORKDIR /home/cabal/code
-CMD ["/home/cabal/.cabal/bin/cabal", "install", "-j", "--libdir=/home/cabal/lib", "--bindir=/home/cabal/bin"]
+CMD ["install", "-j", "--libdir=/home/cabal/lib", "--bindir=/home/cabal/bin"]
