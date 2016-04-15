@@ -6,8 +6,7 @@ MAINTAINER Michael Søby Andersen <michael@megha.it>
 ADD puppet /tmp/puppet
 RUN cd /tmp/puppet; puppet apply -d manifests/default.pp --modulepath=/tmp/puppet/modules
 
+USER cabal
 ENTRYPOINT ["/home/cabal/.cabal/bin/cabal"]
-
-WORKDIR /code
-
-CMD ["/home/cabal/.cabal/bin/cabal", "install", "-j"]
+WORKDIR /home/cabal/code
+CMD ["/home/cabal/.cabal/bin/cabal", "install", "-j", "--libdir=/home/cabal/lib", "--bindir=/home/cabal/bin"]
