@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 set -e
 
-VERSION="7.8.4"
-FILENAME="ghc-$VERSION-x86_64-unknown-linux-deb7.tar.xz"
+VERSION="7.10.3"
+FILENAME="ghc-${VERSION}b-x86_64-deb8-linux.tar.xz"
 DIRNAME="ghc-$VERSION"
 
 # Get the GHC-compiler 7.8.4.
 cd /tmp
-wget https://www.haskell.org/ghc/dist/$VERSION/$FILENAME
+wget http://downloads.haskell.org/~ghc/$VERSION/$FILENAME
 
 # Unpack it.
 tar xvf $FILENAME
